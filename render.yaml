@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: kickoff-api
+    env: docker
+    plan: free
+    dockerfilePath: Dockerfile
+    autoDeploy: true
+    healthCheckPath: /health
+    envVars:
+      - key: SUPABASE_URL
+        fromSecret: supabase_url
+      - key: SUPABASE_KEY
+        fromSecret: supabase_key
